@@ -1,22 +1,7 @@
-name: 'jaffle_shop'
-version: '1.0.0'
-config-version: 2
-
-profile: 'default'
-
-model-paths: ["quickstart/models", "demo/models"]
-
-target-path: "target"
-clean-targets:
-  - "target"
-  - "dbt_packages"
+name: 'IST722DBT'  # or 'northwind' if you renamed it
 
 models:
-  quickstart:
-    +database: analytics
-    marts:
-      jaffle_shop:
-        +schema: jaffle_shop
-        materialized: view
-  demo:
-    +database: analytics
+  IST722DBT:         # <-- must match your folder name (case-sensitive!)
+    +materialized: table
+    database: analytics
+    +schema: northwind
