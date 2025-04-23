@@ -1,0 +1,7 @@
+name: 'IST722DBT'
+
+models:
+  IST722DBT:
+    +materialized: table
+    database: IST722DBT          # ← Match your working dbt debug database
+    schema: dbt_tmistry          # ← Match your schema
