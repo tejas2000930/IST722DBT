@@ -1,7 +1,7 @@
-name: 'IST722DBT'  # or 'northwind' if you renamed it
+name: 'IST722DBT'
 
 models:
-  IST722DBT:         # <-- must match your folder name (case-sensitive!)
+  IST722DBT:
     +materialized: table
-    database: analytics
-    +schema: northwind
+    database: IST722DBT          # ← Match your working dbt debug database
+    schema: dbt_tmistry          # ← Match your schema
