@@ -1,0 +1,7 @@
+name: 'IST722DBT'  # or 'northwind' if you renamed it
+
+models:
+  IST722DBT:         # <-- must match your folder name (case-sensitive!)
+    +materialized: table
+    database: analytics
+    +schema: northwind

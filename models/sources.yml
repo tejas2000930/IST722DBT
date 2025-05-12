@@ -1,0 +1,42 @@
+version: 2
+
+sources:
+  - name: conformed
+    database: raw
+    schema: conformed
+    tables:
+      - name: DateDimension
+        columns:
+          - name: DateKey
+            tests:
+              - unique
+
+  - name: northwind
+    database: raw
+    schema: northwind
+    tables:
+      - name: Customers
+        columns:
+          - name: CustomerId
+            tests:
+              - unique
+      - name: Employees
+        columns:
+          - name: EmployeeId
+            tests:
+              - unique
+      - name: Orders
+        columns:
+          - name: OrderId
+            tests:
+              - unique
+      - name: Order_Details
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+              combination_of_columns: [OrderId, ProductId]
+      - name: Shippers
+        columns:
+          - name: ShipperID
+            tests:
+              - unique
+      # (Add Products, Suppliers, Categories similarly if you’ll need them)
